@@ -17,7 +17,7 @@ usersテーブルとgroupsテーブルはお互いに多対多となるため中
 |password|text|null: false|
 |name|string|null: false,unique :true,index :true|
 
-class User < ActiveRecored: :Base
+class User < ActiveRecored: :base
   has_many:messages
   has_many:group_users
   has_many: group, through: :group_users
@@ -62,5 +62,5 @@ end
 class Group_users < ActiveRecord: :base
   belong_to :user
   belong_to :group
-
+end
 
