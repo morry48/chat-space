@@ -20,6 +20,7 @@ usersテーブルとgroupsテーブルはお互いに多対多となるため中
 
 class User < ActiveRecored: :Base
   has_many:messages
+  has_many:groups_users
   has_many: group, through: :groups_users
 end
 
