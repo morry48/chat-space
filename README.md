@@ -24,7 +24,6 @@ class User < ActiveRecored: :Base
   has_many: group, through: :group_users
 end
 
-add_index :messages,[:name]
 
 
 ##messagesテーブル
