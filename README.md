@@ -16,7 +16,7 @@ usersテーブルとgroupsテーブルはお互いに多対多となるため中
 |———|———-|———|
 |email|text|null: false, unique: true|
 |password|text|null: false|
-|name|string|null: false|
+|name|string|null: false,unique :true,index :true|
 
 class User < ActiveRecored: :Base
   has_many:messages
