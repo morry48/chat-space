@@ -30,8 +30,7 @@ add_index :messages,[:name]
 ##messagesテーブル
 |Column|Type|Options|
 |———|———-|———|
-|id|integer|null: false|
-|body|text|null: false|
+|body|text||
 |image|string|           |
 |group_id|references|foreign_key: true|
 |user_id|references|foreign_key: ture|
