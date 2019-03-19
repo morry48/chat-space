@@ -46,7 +46,7 @@ end
 ##groupsテーブル
 |Column|Type|Options|
 |———|———-|———|
-|group_name|text|null: false|
+|name|string|null: false|
 
 class Group < ActiveRecord: :base
   has_many :messages
