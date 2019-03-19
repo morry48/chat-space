@@ -4,6 +4,7 @@
 *ユーザー管理機能
 *グループ管理機能
 *グループ・ユーザー管理機能
+
 ##アソシエーションについて
 usersテーブルとmessagesテーブル、groupsテーブルがどちらも一対多となるアソシエーションを設定する。
 usersテーブルとgroupsテーブルはお互いに多対多となるため中間テーブルのgroup-usersテーブルを作成し、アソシエーションを設定する。
@@ -15,6 +16,7 @@ usersテーブルとgroupsテーブルはお互いに多対多となるため中
 |email|text|null: false, unique: true|
 |password|text|null: false|
 |name|string|null: false,unique :true,index :true|
+
 class User < ActiveRecored: :Base
   has_many:messages
   has_many:group_users
@@ -35,8 +37,6 @@ class Message < ActiveRecord: :Base
   belong_to :user
   belong_to :group
 end
-
-
 
 
 ##groupsテーブル
