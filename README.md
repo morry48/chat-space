@@ -40,8 +40,6 @@ class Message < ActiveRecord: :Base
   belong_to :group
 end
 
-INDEX
-  add_index :messages,[:group_id, :use_id]
 
 
 
