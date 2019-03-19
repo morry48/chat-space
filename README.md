@@ -14,14 +14,16 @@ usersテーブルとgroupsテーブルはお互いに多対多となるため中
 ##usersテーブル
 |Column|Type|Options|
 |———|———-|———|
-|email|text|null: false|
+|email|text|null: false, unique: true|
 |password|text|null: false|
-|user_name|integer|null: false|
+|name|string|null: false|
 
 class User < ActiveRecored: :Base
   has_many:messages
   has_many: group, through: :groups_users
 end
+
+add_index :messages,[:name]
 
 
 ##messagesテーブル
@@ -50,7 +52,7 @@ INDEX
 
 class Group < ActiveRecord: :base
   has_many :messages
-  has_many :user,through: :groups_users
+  has_many :user,through: :groups_user
 end
 
 
