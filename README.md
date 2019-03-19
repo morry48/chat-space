@@ -1,15 +1,15 @@
-#Chatspace database設計
+# Chatspace database設計
 
-*メッセージ管理機能　　
-*ユーザー管理機能　　
-*グループ管理機能　　
-*グループ・ユーザー管理機能　　
+* メッセージ管理機能　　
+* ユーザー管理機能　　
+* グループ管理機能　　
+* グループ・ユーザー管理機能　　
 
-##アソシエーションについて　　
+## アソシエーションについて　　
 usersテーブルとmessagesテーブル、groupsテーブルがどちらも一対多となるアソシエーションを設定する。　　
-usersテーブルとgroupsテーブルはお互いに多対多となるため中間テーブルのgroup-usersテーブルを作成し、アソシエーションを設定する。　　
+usersテーブルとgroupsテーブルはお互いに多対多となるため中間テーブルのgroup-usersテーブルを作成し、アソシエーションを設定する。
 
-##usersテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -24,7 +24,7 @@ class User < ActiveRecored: :base
 end
 
 
-##messagesテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -39,7 +39,7 @@ class Message < ActiveRecord: :Base
 end
 
 
-##groupsテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -52,7 +52,7 @@ class Group < ActiveRecord: :base
 end
 
 
-##group_usersテーブル（中間テーブル）
+## group_usersテーブル（中間テーブル）
 
 |Column|Type|Options|
 |------|----|-------|
