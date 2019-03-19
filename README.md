@@ -61,4 +61,8 @@ end
 |group_id|references |:group,foreign_key: true  |
 |user_id|references |:user,foreign_key: true |
 
+class Group_users < ActiveRecord: :base
+  belong_to :user
+  belong_to :group
+
 
