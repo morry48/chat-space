@@ -1,58 +1,53 @@
-.chat
-  .upside-flash
-    %h5 グループを作成しました
-  .side-bar
-    .side-bar__right-margin
-    .side-bar__main
-      .side-bar__upside
-        .side-bar__user
-          %h5 test-user
-        .side-bar__group-new
-
-        .side-bar__user-edit
-
-      .side-bar__groups
-        .side-bar__group-1
-          .side-bar__group-name-1
-            %h5 sample-group
-          .side-bar__new-message-1
-            %p hellow
-        .side-bar__group-2
-          .side-bar__group-name-2
-            %h5 example
-          .side-bar__new-message-2
-            %p まだメッセージがありません
-    .side-bar-right-margin
+.alart
+  %p グループを作成しました。
 
 
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p( class='side-header__box__user-name') yu
+        %ul( class='side-header__box__menu')
+          %li(class='side-header__box__menu__new-group')
+            =link_to "" ,"#",method: :get,class:"fa fa-edit"
+          %li( class='side-header__box__menu__edit-user')
+            =link_to "","#",method: :get, class:"fa fa-cog"
+    .groups
+      =link_to '/groups/id:1/messages',method: :get do
+        .group
+          %p(class='group__group-name') sample-group
+          %p(class='group__lagest-message') hellow!
+      end
+      =link_to '/groups/id:2/messages',method: :get do
+        .group
+          %p(class='group__group-name') example
+          %p(class='group__lagest-message') メッセージがありません
+      end
   .chat-main
-    .chat-left-margin
-    .chat-main__upside
-      .chat-imfomation
-        .chat-group
-          %h3 sample-group
-        .chat-members
-          %p test-user
-        .chat-group__edit
-          %h5 edit
-    .chat-box
-      .chat-post-1
-        .chat-post__user
-          %h5 test-user
-        .chat-post__time
-          %p 2019/03/20(wed) 16:24
-        .chat-post__content
-          %h5 こんにちは！
-    .chat-bottom
-      .chat__send
-        .chat__new-massage
-          .chat-text-box
-
-          .chat-image
-
-        .chat__send-btn
-
-  .chat-right-margin
-
+    .main-header
+      .main-header__left-box
+        %h2(class='main-header__left-box__current-group')group-name
+        %ul(class='main-header__left-box__member-list') member :
+        %li(class='main-header__left-box__member-list__member') yu
+      .edit-btn
+        =link_to 'Edit','/groups/id/edit'
+    .messages
+      .message
+        .message__upper-info
+          %p(class='message__upper-info__taker') test-user1
+          %p(class='message__upper-info__date') 2019/03/20(wed) 16:24
+        %p(class='message__text') こんにちは
+      .message
+        .message__upper-info
+          %p(class='message__upper-info__taker') test-user2
+          %p(class='message__upper-info__date') 2019/03/20(wed) 16:24
+        %p(class='message__text') こんばんは
+    .form
+      %form(class='new_message')
+        .input-box
+          %input(class='input-box__text' placeholder='type a message')
+          %label(class='input-box__image')
+            %i(class='fa fa-image')
+        %input(class='submit-btn' value="Send" data-disable-with="Send")
 
 

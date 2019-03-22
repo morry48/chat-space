@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+.alart{
+  width:100%;
+  height:20px;
+  position:fixed;
+  z-index:1;
+  background-color:$light-blue;
+  p{
+    color:$white;
+    text-align:center;
+  }
+}
+
+.wrapper{
+  margin: 0;
+  padding-top:20px;
+  height:100%;
+  .chat-side{
+    width: 300px;
+    color: white;
+    float:left;
+    .side-header{
+      position:relative;
+      background-color: #253141;
+      height: 100px;
+      padding:0 20px;
+      .side-header__box{
+        display:flex;
+        width:100%;
+        font-weight:bold;
+        line-height:100px;
+        .side-header__box__user-name{
+        }
+        .side-header__box__menu{
+          display:flex;
+          position:absolute;
+          right:20px;
+          .side-header__box__menu__edit-user{
+            margin-left:5px;
+            a{
+              color:$white;
+              text-decoration: none;
+            }
+            }
+          .side-header__box__menu__new-group{
+            margin-left:5px;
+            a {
+              color:$white;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+    .groups{
+      height: calc(100vh - 100px);
+      background-color: #2f3e51;
+      padding:20px 20px 0;
+      a{
+        color:$white;
+        text-decoration: none;
+        .group{
+          margin-bottom:40px;
+          .group__group-name{
+            font-size:15px;
+            margin-bottom:5px;
+          }
+          .group__lagest-message{
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+  .chat-main{
+    width: calc(100vw - 300px);
+    float: left;
+    .main-header{
+      height: 100px;
+      border-bottom: solid 1px #eee;
+      padding:0 40px;
+      .main-header__left-box{
+        float:left;
+        margin-top:35px;
+        .main-header__left-box__current-group{
+          font-size: 20px;
+          color:#333;
+          margin-bottom: 15px;
+        }
+        .main-header__left-box__member-list{
+          font-size:12px;
+          color:#999999;
+          float:left
+        }
+        .main-header__left-box__member-list__member{
+          float:left;
+          list-style:none;
+          color:#999999;
+          font-size:12px;
+        }
+      }
+      .edit-btn{
+        float:right;
+        border:$light-blue solid 1px;
+        height:40px;
+        width:70px;
+        margin-top:28px;
+        text-align:center;
+
+        a{
+          text-decoration: none;
+          line-height:40px;
+          height:40px;
+          width:70px;
+          color:$light-blue;
+                  }
+      }
+    }
+    .messages{
+      height: calc(100vh - 190px);
+      background-color: #fafafa;
+      padding:46px 40px;
+      .message{
+        padding-bottom:40px;
+        .message__upper-info{
+          display:flex;
+          margin-bottom:10px;
+          .message__upper-info__talker{
+            color:#434154;
+            font-size:16px;
+            font-weight:bold;
+          }
+          .message__upper-info__date{
+            color:#999999;
+            font-size:12px;
+            margin-left:10px;
+          }
+        }
+        .message__text{
+          color: #434a54;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .form{
+      height: 90px;
+      background-color: #ddd;
+      padding:20px 40px;
+      .new_message{
+        display:flex;
+        .input-box{
+          width:100%;
+          position:relative;
+          .input-box__text{
+            height:50px;
+            width: 100%;
+            padding: 0 40px 0 10px;
+            color: #434a54;
+            border-style: none;
+          }
+          .input-box__image{
+            position:absolute;
+            font-size: 1.3rem;
+            top: 10px;
+            right: 10px;
+          }
+        }
+        .submit-btn{
+              width: 100px;
+              height: 50px;
+              padding: 0 30px;
+              margin-left: 15px;
+              background-color:$light-blue;
+              color: $white;
+              font-size:14px
+        }
+      }
+    }
+  }
+}
