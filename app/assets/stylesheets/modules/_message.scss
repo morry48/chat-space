@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.wrapper{
+  margin: 0;
+  padding-top:20px;
+  height:100%;
+  .chat__side{
+    width: 300px;
+    color: white;
+    float:left;
+
+
+  }
+  .chat__main{
+    width: calc(100vw - 300px);
+    float: left;
+
+
+
+  }
+}

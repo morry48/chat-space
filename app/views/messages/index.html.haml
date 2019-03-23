@@ -1,0 +1,51 @@
+.alart
+  %p グループを作成しました。
+
+.wrapper
+  .chat__side
+    .side__header
+      .side__header__box
+        %p( class='side__header__box__user__name') yu
+        %ul( class='side__header__box__menu')
+          %li(class='side__header__box__menu__new__group')
+            =link_to "" ,"#",method: :get,class:"fa fa-edit"
+          %li( class='side__header__box__menu__edit__user')
+            =link_to "","#",method: :get, class:"fa fa-cog"
+    .groups
+      =link_to '/groups/id:1/messages',method: :get do
+        .group
+          %p(class='group__name') sample-group
+          %p(class='group__lagest__message') hellow!
+      =link_to '/groups/id:2/messages',method: :get do
+        .group
+          %p(class='group__group--name') example
+          %p(class='group__lagest--message') メッセージがありません
+  .chat__main
+    .main__header
+      .main__header__left__box
+        %h2(class='main__header__left__box__current__group')group-name
+        %ul(class='main__header__left__box__member__list') member :
+        %li(class='main__header__left__box__member__list__member') yu
+      .edit-btn
+        =link_to 'Edit','/groups/id/edit'
+    .messages
+      .message
+        .message__upper-info
+          %p(class='message__upper__info__taker') test__user1
+          %p(class='message__upper__info__date') 2019/03/20(wed) 16:24
+        %p(class='message__text') こんにちは
+      .message
+        .message__upper-info
+          %p(class='message__upper__info__taker') test-user2
+          %p(class='message__upper__info__date') 2019/03/20(wed) 16:24
+        %p(class='message__text') こんばんは
+    .form
+      %form(class='new__message')
+        .new__message__input__box
+          %input(class='new__message__input__box__text' placeholder='type a message')
+          %label(class='new__message__input__box__image')
+            %i(class="fa fa-image")
+            %input(class="new__message__input__box__image__file" type="file")
+        %input(class='new__message__submit__btn' value="Send" data-disable-with="Send")
+
+
