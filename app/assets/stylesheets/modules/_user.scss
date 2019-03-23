@@ -3,25 +3,25 @@
       background-color: #253141;
       height: 100px;
       padding:0 20px;
-      .side__header__box{
+      &__box{
         display:flex;
         width:100%;
         font-weight:bold;
         line-height:100px;
-        .side__header__box__user__name{
+        &__user__name{
         }
-        .side__header__box__menu{
+        &__menu{
           display:flex;
           position:absolute;
           right:20px;
-          .side__header__box__menu__new__group{
+          &__new__group{
             margin-left:5px;
             a{
               color:$white;
               text-decoration: none;
             }
             }
-          .side__header__box__menu__edit__user{
+          &__edit__user{
             margin-left:5px;
             a {
               color:$white;

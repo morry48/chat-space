@@ -4,28 +4,28 @@
   padding:20px 40px;
   .new__message{
     display:flex;
-    .message__input__box{
+    &__input__box{
       width:100%;
       position:relative;
-      .input__box__new--message__text{
+      &__text{
         height:50px;
         width: 100%;
         padding: 0 40px 0 10px;
         color: #434a54;
         border-style: none;
       }
-      .input__box__image{
+      &__image{
         position:absolute;
         font-size: 1.3rem;
         top: 10px;
         right: 10px;
         cursor: pointer;
-        .input__box__image__file{
+        &__file{
           display:none;
         }
       }
     }
-    .new__message__submit__btn{
+    &__submit__btn{
           width: 100px;
           height: 50px;
           padding: 0 30px;

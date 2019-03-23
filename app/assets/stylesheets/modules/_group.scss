@@ -7,11 +7,11 @@
     text-decoration: none;
     .group{
       margin-bottom:40px;
-      .group__group__name{
+      &__name{
         font-size:15px;
         margin-bottom:5px;
       }
-      .ggroup__lagest__message{
+      &__lagest__message{
         font-size: 11px;
       }
     }

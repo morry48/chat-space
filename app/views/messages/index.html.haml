@@ -14,7 +14,7 @@
     .groups
       =link_to '/groups/id:1/messages',method: :get do
         .group
-          %p(class='group__group__name') sample-group
+          %p(class='group__name') sample-group
           %p(class='group__lagest__message') hellow!
       =link_to '/groups/id:2/messages',method: :get do
         .group
@@ -41,11 +41,11 @@
         %p(class='message__text') こんばんは
     .form
       %form(class='new__message')
-        .message__input__box
-          %input(class='input__box__new--message__text' placeholder='type a message')
-          %label(class='input__box__image')
+        .new__message__input__box
+          %input(class='new__message__input__box__text' placeholder='type a message')
+          %label(class='new__message__input__box__image')
             %i(class="fa fa-image")
-            %input(class="input__box__image__file" type="file")
+            %input(class="new__message__input__box__image__file" type="file")
         %input(class='new__message__submit__btn' value="Send" data-disable-with="Send")
 
 
