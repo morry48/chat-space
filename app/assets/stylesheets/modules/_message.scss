@@ -7,14 +7,14 @@
   margin: 0;
   padding-top:20px;
   height:100%;
-  .chat-side{
+  .chat__side{
     width: 300px;
     color: white;
     float:left;
 
 
   }
-  .chat-main{
+  .chat__main{
     width: calc(100vw - 300px);
     float: left;
 
