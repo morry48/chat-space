@@ -1,7 +1,6 @@
 .alart
   %p グループを作成しました。
 
-
 .wrapper
   .chat-side
     .side-header
@@ -17,12 +16,10 @@
         .group
           %p(class='group__group-name') sample-group
           %p(class='group__lagest-message') hellow!
-      end
       =link_to '/groups/id:2/messages',method: :get do
         .group
           %p(class='group__group-name') example
           %p(class='group__lagest-message') メッセージがありません
-      end
   .chat-main
     .main-header
       .main-header__left-box

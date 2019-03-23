@@ -1,4 +1,36 @@
-
+.side-header{
+      position:relative;
+      background-color: #253141;
+      height: 100px;
+      padding:0 20px;
+      .side-header__box{
+        display:flex;
+        width:100%;
+        font-weight:bold;
+        line-height:100px;
+        .side-header__box__user-name{
+        }
+        .side-header__box__menu{
+          display:flex;
+          position:absolute;
+          right:20px;
+          .side-header__box__menu__edit-user{
+            margin-left:5px;
+            a{
+              color:$white;
+              text-decoration: none;
+            }
+            }
+          .side-header__box__menu__new-group{
+            margin-left:5px;
+            a {
+              color:$white;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
 
 
 
