@@ -1,16 +1,14 @@
-.alart
-  %p グループを作成しました。
-
 .wrapper
   .chat__side
     .side__header
       .side__header__box
-        %p( class='side__header__box__user__name') yu
+        %p( class='side__header__box__user__name')
+          =current_user.name
         %ul( class='side__header__box__menu')
           %li(class='side__header__box__menu__new__group')
             =link_to "" ,"#",method: :get,class:"fa fa-edit"
           %li( class='side__header__box__menu__edit__user')
-            =link_to "","#",method: :get, class:"fa fa-cog"
+            =link_to "",  edit_user_path(current_user), class:"fa fa-cog"
     .groups
       =link_to '/groups/id:1/messages',method: :get do
         .group
