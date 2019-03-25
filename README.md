@@ -6,8 +6,8 @@
 * グループ・ユーザー管理機能　　
 
 ## アソシエーションについて　　
-usersテーブルとmessagesテーブル、groupsテーブルがどちらも一対多となるアソシエーションを設定する。  
-usersテーブルとgroupsテーブルはお互いに多対多となるため中間テーブルのgroup-usersテーブルを作成し、アソシエーションを設定する。  
+usersテーブルとmessagesテーブル、groupsテーブルがどちらも一対多となるアソシエーションを設定する。
+usersテーブルとgroupsテーブルはお互いに多対多となるため中間テーブルのgroup-userテーブルを作成し、アソシエーションを設定する。
 
 ## usersテーブル
 
@@ -17,10 +17,10 @@ usersテーブルとgroupsテーブルはお互いに多対多となるため中
 |password|text|null: false|
 |name|string|null: false,unique :true,index :true|
 
-class User < ActiveRecored: :base  
-  has_many:messages  
-  has_many:group_users  
-  has_many: group, through: :group_users  
+class User < ActiveRecored: :base
+  has_many:messages
+  has_many:group_user
+  has_many: group, through: :group_user
 end
 
 
@@ -33,9 +33,9 @@ end
 |group_id|references|foreign_key: true|
 |user_id|references|foreign_key: ture|
 
-class Message < ActiveRecord: :Base  
-  belong_to :user  
-  belong_to :group  
+class Message < ActiveRecord: :Base
+  belong_to :user
+  belong_to :group
 end
 
 
@@ -45,10 +45,10 @@ end
 |------|----|-------|
 |name|string|null: false|
 
-class Group < ActiveRecord: :base  
-  has_many :messages  
-  has_meny :group_users  
-  has_many :user,through: :groups_user  
+class Group < ActiveRecord: :base
+  has_many :messages
+  has_meny :group_user
+  has_many :user,through: :group_user
 end
 
 
@@ -59,8 +59,8 @@ end
 |group_id|references|:group,foreign_key: true|
 |user_id|references|:user,foreign_key: true|
 
-class Group_users < ActiveRecord: :base  
-  belong_to :user  
-  belong_to :group  
+class Group_users < ActiveRecord: :base
+  belong_to :user
+  belong_to :group
 end
 
