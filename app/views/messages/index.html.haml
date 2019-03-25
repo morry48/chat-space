@@ -10,14 +10,13 @@
           %li( class='side__header__box__menu__edit__user')
             =link_to "",  edit_user_path(current_user), class:"fa fa-cog"
     .groups
-      =link_to '/groups/id:1/messages',method: :get do
-        .group
-          %p(class='group__name') sample-group
-          %p(class='group__lagest__message') hellow!
-      =link_to '/groups/id:2/messages',method: :get do
-        .group
-          %p(class='group__group--name') example
-          %p(class='group__lagest--message') メッセージがありません
+      -current_user.groups.each do |group|
+        =link_to group_messages_path(group) do
+          .group
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません。
   .chat__main
     .main__header
       .main__header__left__box
