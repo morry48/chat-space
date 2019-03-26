@@ -1,0 +1,12 @@
+-@group.messages.each do |message|
+  .message
+    .message__upper__info
+      .message__upper__info__taker
+        = message.user.name
+      .message__upper__info__date
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
+    .message__text
+    - if message.content.present?
+      %p.message__text__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
