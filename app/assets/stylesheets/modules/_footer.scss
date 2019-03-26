@@ -2,30 +2,28 @@
   height: 90px;
   background-color: #ddd;
   padding:20px 40px;
-  .new__message{
+  .new_message{
     display:flex;
-    &__input__box{
-      width:100%;
-      position:relative;
-      &__text{
+    width:100%;
+    position:relative;
+      .form__message{
         height:50px;
         width: 100%;
         padding: 0 40px 0 10px;
         color: #434a54;
         border-style: none;
       }
-      &__image{
-        position:absolute;
-        font-size: 1.3rem;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        &__file{
+        i{
+          position:absolute;
+          font-size: 1.3rem;
+          top: 15px;
+          right: 125px;
+          cursor: pointer;
+        }
+        .hidden{
           display:none;
         }
-      }
-    }
-    &__submit__btn{
+      .form__submit{
           width: 100px;
           height: 50px;
           padding: 0 30px;
