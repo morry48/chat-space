@@ -42,7 +42,7 @@ $(function() {
       }
     })
     .fail(function(){
-      console.log('検索に失敗しました')
+      alert('検索に失敗しました')
     });
   });
   $("#user-search-result").on('click' ,'.user-search-add',function(){
