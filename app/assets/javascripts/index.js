@@ -15,7 +15,7 @@ $(function() {
 
   function buildHTML(id,name){
     var html = `<div class="chat-group-user clearfix" id="chat-group-user-${id}">
-                 <input name = "chat_group[user_ids][]" type ="hidden" value="${id}"}/>
+                 <input name = "group[user_ids][]" type ="hidden" value="${id}"}/>
                  <p class="chat-group-user__name">${name}</p>
                  <p class="user-search-remove chat-group-user__btn chat-group-user__btn--remove" data-user-id="${id}">削除</p>
                </div>`
