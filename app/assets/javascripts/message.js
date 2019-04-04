@@ -76,18 +76,15 @@ $(function(){
   });
 
   function reloadMessages(){
-    var last_message_id = $('.message').last().attr('data-message-id');
-    console.log('last_message_id is');
-    console.log(last_message_id);
+    var lastMessageId = $('.message').last().attr('data-message-id');
     $.ajax({
       url:"./api/messages",
       type: 'get',
       dataType: 'json',
-      data: {last_message_id: last_message_id}
+      data: {lastMessageId: lastMessageId}
     })
     .done(function(messages){
       var insertHTML='';
-      console.log(messages.length);
       messages.forEach(function(message){
         insertHTML = buildHTML(message);
         $('.messages').append(insertHTML);

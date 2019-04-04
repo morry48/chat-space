@@ -3,7 +3,8 @@ class Api::MessagesController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        @messages= Group.find(params[:group_id]).messages.where('id>?',params[:last_message_id])
+        @group=Group.find(params[:group_id])
+        @messages= @group.messages.where('id>?',params[:lastMessageId])
       end
     end
   end
