@@ -1,6 +1,5 @@
-json.content @message.content
+json.(@message, :content, :image)
+json.created_at @message.created_at.strftime("%Y/%m/%d(%a) %H:%M:%S")
 json.user_name @message.user.name
-json.created_at @message.created_at.strftime("%Y/%m/%d %H:%M")
-json.image @message.image
-json.is_image_present @message.image.present?
-
+#idもデータとして渡す
+json.id @message.id
