@@ -76,7 +76,7 @@ $(function(){
   });
 
   function reloadMessages(){
-    var lastMessageId = $('.message').last().attr('data-message-id');
+    var lastMessageId = $('.message').last().data('message-id');
     $.ajax({
       url:"./api/messages",
       type: 'get',
