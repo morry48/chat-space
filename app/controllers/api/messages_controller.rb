@@ -1,5 +1,5 @@
 class Api::MessagesController < ApplicationController
-  before_action :set_group
+  before_action :set_group, only:[:index]
   def index
     respond_to do |format|
       format.html
