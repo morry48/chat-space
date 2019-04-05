@@ -74,7 +74,6 @@ $(function(){
       alert('error')
     })
   });
-
   function reloadMessages(){
     var lastMessageId = $('.message').last().data('message-id');
     $.ajax({
@@ -91,6 +90,8 @@ $(function(){
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast')
       });
     })
+    .fail(function() {
+    });
   };
   setInterval(reloadMessages,5000);
 });
