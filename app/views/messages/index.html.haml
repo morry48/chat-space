@@ -3,7 +3,7 @@
     =render partial: "shared/side_bar"
   .chat__main
     .main__header
-      .main__header__left__box
+      .main__header__left__box{"data-group_id": @group.id}
         %h2(class='main__header__left__box__current__group')
           =@group.name
         %p(class='main__header__left__box__member__list') Member:
