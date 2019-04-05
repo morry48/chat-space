@@ -2,52 +2,52 @@ $(function(){
   function buildHTML(message){
     if (message.content && message.image.url){
     var image = message.is_image_present ? `<img src='${message.image.url}' class='lower-message__image'> ` : ''
-    var html = '<div class="message" data-message-id=' + message.id + '>'+
-                  '<div class="message__upper__info">' +
-                   '<div class="message__upper__info__taker">'+
-                      message.user_name  +
-                    '</div>'  +
-                    '<div class="message__upper__info__date">' +
-                      message.created_at +
-                    '</div>' +
-                  '</div>' +
-                  '<div class="message__text">' +
-                    '<p class="message__text__content">' +
-                      message.content  +
-                    '</p>' +
-                    '<img src="' + message.image.url + '" class="lower-message__image">' +
-                  '</div>' +
-                '</div>'
+    var html = `<div class="message" data-message-id=${message.id}>
+                  <div class="message__upper__info">
+                   <div class="message__upper__info__taker">
+                      ${message.user_name}
+                    </div>
+                    <div class="message__upper__info__date">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="message__text">
+                    <p class="message__text__content">
+                      ${message.content}
+                    </p>
+                    <img src=${message.image.url}+ '" class="lower-message__image">
+                  </div>
+                </div>`
     } else if (message.content) {
-      var html = '<div class="message" data-message-id=' + message.id + '>' +
-        '<div class="message__upper__info">' +
-          '<div class="message__upper__info__taker">' +
-            message.user_name +
-          '</div>' +
-          '<div class="message__upper__info__date">' +
-            message.created_at +
-          '</div>' +
-        '</div>' +
-        '<div class="message__text">' +
-          '<p class="message__text__content">' +
-            message.content +
-          '</p>' +
-        '</div>' +
-      '</div>'
+      var html = `<div class="message" data-message-id=${message.id}>
+                    <div class="message__upper__info">
+                      <div class="message__upper__info__taker">
+                        ${message.user_name}
+                      </div>
+                      <div class="message__upper__info__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <div class="message__text">
+                      <p class="message__text__content">
+                        ${message.content}
+                      </p>
+                    </div>
+                  </div>`
     } else if (message.image.url) {
-      var html = '<div class="message" data-message-id=' + message.id + '>' +
-        '<div class="message__upper__info">' +
-          '<div class="message__upper__info__taker">' +
-            message.user_name +
-          '</div>' +
-          '<div class="message__upper__info__date">' +
-            message.created_at +
-          '</div>' +
-        '</div>' +
-        '<div class="message__text">' +
-          '<img src="' + message.image.url + '" class="lower-message__image" >' +
-        '</div>' +
-      '</div>'
+      var html = `<div class="message" data-message-id=${message.id}>
+                    <div class="message__upper__info">
+                      <div class="message__upper__info__taker">
+                        ${message.user_name}
+                      </div>
+                      <div class="message__upper__info__date">
+                        ${message.created_at}
+                      </div>
+                    </div>
+                    <div class="message__text">
+                      <img src=${message.image.url} class="lower-message__image">
+                    </div>
+                  </div>`
     };
     return html;
   };
