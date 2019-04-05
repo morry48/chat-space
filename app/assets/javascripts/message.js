@@ -78,7 +78,7 @@ $(function(){
   function reloadMessages(){
     var lastMessageId = $('.message').last().data('message-id');
     $.ajax({
-      url:"./api/messages",
+      url:'./api/messages',
       type: 'get',
       dataType: 'json',
       data: {lastMessageId: lastMessageId}
@@ -91,9 +91,6 @@ $(function(){
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast')
       });
     })
-    .fail(function() {
-      console.log('error');
-    });
   };
   setInterval(reloadMessages,5000);
 });
