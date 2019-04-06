@@ -74,6 +74,7 @@ $(function(){
       alert('error')
     })
   });
+
   function reloadMessages(){
     var lastMessageId = $('.message').last().data('message-id');
     $.ajax({
@@ -94,5 +95,7 @@ $(function(){
       alert('自動更新に失敗しました')
     });
   };
-  setInterval(reloadMessages,5000);
+  if(location.pathname.indexOf('messages') != -1){
+    setInterval(reloadMessages,5000);
+  }
 });
