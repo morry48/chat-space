@@ -8,10 +8,9 @@ $(function() {
   search_list.append(html);
   };
 
-  function appendNoUser(user){
+  function appendNoUser(){
     var html = `<div class="chat-group-user clearfix">
-                  <p class="chat-group-user__name">${user.name}</p>
-                  <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</a>
+                  <p class="chat-group-user__name">一致するユーザーは見つかりません</p>
                 </div>`
   search_list.append(html);
   };
@@ -36,11 +35,13 @@ $(function() {
       })
       .done(function(users){
         $("#user-search-result").empty();
-        if (users.length !=0){
+        if (users.length !==0){
           users.forEach(function(user){
             appendUser(user);
           });
-
+        }
+        else{
+          appendNoUser();
         }
       })
       .fail(function(){
@@ -49,7 +50,7 @@ $(function() {
     }
     else{
       $("#user-search-result").empty();
-    };
+    }
   });
   $("#user-search-result").on('click' ,'.user-search-add',function(){
       var id = $(this).data('user-id');
